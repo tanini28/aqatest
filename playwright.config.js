@@ -43,9 +43,11 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-//      use: { ...devices['Desktop Chrome'],
-//       viewport: { width: 1380, height: 780 } },
+      name: 'e2e-tests',
+      testMatch: 'e2e.spec.js',
+      use: {
+        baseURL: process.env.UI_BASE_URL,
+      }
     },
 
     {

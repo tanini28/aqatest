@@ -1,4 +1,3 @@
-
 export class RegisterPage {
     constructor(page) {
         this.page = page;
@@ -15,8 +14,8 @@ export class RegisterPage {
         this.submitRegistrationBtn = page.locator('[id="register-button"]');
     }
 
-    async navigate() {
-        await this.page.goto('https://aqa-app.vercel.app/login');
+    async openLoginPage() {
+        await this.page.goto('/login');
     }
 
     async fillRegistrationForm(testData){

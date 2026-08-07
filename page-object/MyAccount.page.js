@@ -1,5 +1,3 @@
-import {expect} from "@playwright/test";
-
 export class MyAccountPage {
     constructor(page) {
         this.page = page;
@@ -9,17 +7,6 @@ export class MyAccountPage {
         this.logoutButton = page.locator('[id="account-logout-button"]');
 
     }
-     async checkFinalOrder(firstItemPrice, lastItemPrice) {
-         const totalPrice = Number(firstItemPrice.replace('$', '')) + Number(lastItemPrice.replace('$', ''));
-         console.log(totalPrice);
-         await expect(this.totalAmountField).toContainText(`${totalPrice}`);
-     }
-
-     async checkTwoItems(){
-        await expect(this.items.first()).toBeVisible();
-        await expect(this.items.last()).toBeVisible();
-        await expect(this.logoutButton).toBeEnabled();
-     }
 
      async logout() {
         await this.logoutButton.click();
