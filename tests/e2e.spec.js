@@ -8,7 +8,6 @@ import {CheckoutPage} from '../page-object/Checkout.page';
 import {MyAccountPage} from '../page-object/MyAccount.page';
 
 
-test.setTimeout(50 * 1000);
 
 test.describe('E2E: order flow', () => {
 
